@@ -3,7 +3,7 @@
 //git remote add origin https://github.com/<user>/<reponame>.git
 // ============================
 //git add --all
-//git commit -am 'v1.1'
+//git commit -am 'v1.2'
 //git push origin master
 
 var epress = require("express")
