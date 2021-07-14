@@ -1,4 +1,3 @@
-
 var exp = require("express");
 var router = exp.Router();
 const crypto = require("crypto");
@@ -18,7 +17,7 @@ router.get("/time_unix", (req, res) => {
     res.send({ unix_now, unix_start, unix_end });
 });
 
-router.post("/", (req, res) => {
+router.post("/call", (req, res) => {
     const { app_secret, api_name } = req.headers;
     (async () => {
         const body = req.body;
@@ -38,7 +37,7 @@ router.post("/", (req, res) => {
         });
         //console.log(rss_spee);
         res.send(rss_spee.data);
-    })().catch((err) => res.send(err.stack));
+    })().catch((err) => res.send(err.message));
 });
 
 module.exports = router;
